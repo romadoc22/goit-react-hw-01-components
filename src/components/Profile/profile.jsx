@@ -1,5 +1,6 @@
 import user from 'parts/user.json';
 import css from 'components/Profile/profile.module.css';
+import PropTypes from 'prop-types';
 
 export const Profile = () => {
   return (
@@ -34,4 +35,10 @@ export const Profile = () => {
   );
 };
 
-console.log(Profile);
+Profile.propTypes = {
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  label: PropTypes.number,
+  quantity: PropTypes.number,
+};
