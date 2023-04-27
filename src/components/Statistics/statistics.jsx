@@ -2,10 +2,10 @@
 // import { PageTitle } from '../components/Statistic/pagetitle';
 import data from 'parts/data.json';
 
-export const Statistics = () => {
+export const Statistics = ({ title, stats }) => {
   return (
     <section className="statistics">
-      <h2 className="title">{data.title}</h2>
+      {title && <h2 className="title">{title}</h2>}
       <ul className="stat-list">
         {data.map(data => (
           <li className="item" key={data.id}>

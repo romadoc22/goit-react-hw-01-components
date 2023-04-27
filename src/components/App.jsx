@@ -3,14 +3,15 @@ import data from 'parts/data.json';
 import friends from 'parts/friends.json';
 import { Profile } from 'components/Profile/profile';
 import { Statistics } from 'components/Statistics/statistics';
-import { FriendList } from 'components/FriendList/friendList';
+import { FriendList } from 'components/FriendList/FriendListItem';
 
 export const App = () => {
   return (
     <div
       style={{
         height: '100vh',
-        display: 'flex',
+        display: 'block',
+        // flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
