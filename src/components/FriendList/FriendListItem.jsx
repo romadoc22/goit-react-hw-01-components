@@ -1,11 +1,14 @@
-import friends from 'parts/friends.json';
+import PropTypes from 'prop-types';
 
-export const FriendList = () => {
+import { Ul, Li, Status } from '../FriendList/FriendList.styled';
+
+export const FriendList = ({ friends }) => {
+  console.log(friends);
   return (
-    <ul className="friend-list">
+    <Ul>
       {friends.map(friend => (
-        <li className="item" key={friend.id}>
-          <span className="status">{friend.isOnline}</span>
+        <Li key={friend.id}>
+          <Status isOn={friend.isOnline}></Status>
           <img
             className="avatar"
             src={friend.avatar}
@@ -13,8 +16,14 @@ export const FriendList = () => {
             width="48"
           />
           <p className="name">{friend.name}</p>
-        </li>
+        </Li>
       ))}
-    </ul>
+    </Ul>
   );
+};
+
+FriendList.propTypes = {
+  id: PropTypes.number,
+  isOnline: PropTypes.bool,
+  name: PropTypes.string,
 };

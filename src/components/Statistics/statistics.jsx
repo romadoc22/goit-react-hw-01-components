@@ -1,19 +1,27 @@
-// import css from 'Statistic/statistic.module.css';
-// import { PageTitle } from '../components/Statistic/pagetitle';
+import PropTypes from 'prop-types';
+import getRandomHexColor from '../Statistics/changecolor';
+import { Section, Ul, Li } from '../Statistics/statistics.styled';
 import data from 'parts/data.json';
 
 export const Statistics = ({ title, stats }) => {
   return (
-    <section className="statistics">
+    <Section>
       {title && <h2 className="title">{title}</h2>}
-      <ul className="stat-list">
+      <Ul>
         {data.map(data => (
-          <li className="item" key={data.id}>
+          <Li key={data.id} style={{ backgroundColor: getRandomHexColor() }}>
             <span className="label">{data.label}</span>
             <span className="percentage">{data.percentage}</span>
-          </li>
+          </Li>
         ))}
-      </ul>
-    </section>
+      </Ul>
+    </Section>
   );
+};
+
+Statistics.propTypes = {
+  id: PropTypes.string,
+  title: PropTypes.string,
+  label: PropTypes.string,
+  percentage: PropTypes.number,
 };
