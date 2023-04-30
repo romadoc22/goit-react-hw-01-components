@@ -1,28 +1,17 @@
 import PropTypes from 'prop-types';
+import { Li, Status, Name } from './FriendList.styled';
 
-import { Ul, Li, Status, Name } from '../FriendList/FriendList.styled';
-
-export const FriendList = ({ friends }) => {
-  console.log(friends);
+export function FriendListItem({ id, isOnline, avatar, name }) {
   return (
-    <Ul>
-      {friends.map(friend => (
-        <Li key={friend.id}>
-          <Status isOn={friend.isOnline}></Status>
-          <img
-            className="avatar"
-            src={friend.avatar}
-            alt="User avatar"
-            width="48"
-          />
-          <Name>{friend.name}</Name>
-        </Li>
-      ))}
-    </Ul>
+    <Li key={id}>
+      <Status isOn={isOnline}></Status>
+      <img className="avatar" src={avatar} alt="User avatar" width="48" />
+      <Name>{name}</Name>
+    </Li>
   );
-};
+}
 
-FriendList.propTypes = {
+FriendListItem.propTypes = {
   id: PropTypes.number,
   isOnline: PropTypes.bool,
   name: PropTypes.string,
