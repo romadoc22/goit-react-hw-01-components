@@ -12,16 +12,18 @@ export const Li = styled.li`
   flex-basis: auto;
   flex-basis: 125px;
   border: 3px solid rgba(0, 0, 0, 0.2);
-  flex-shrink: 1;
 `;
 
 export const Status = styled.span`
-  color: ${props => {
-    return props.isOn ? `green` : `red`;
-  }};
-  width: 10px;
-  height: 10px;
+  background-color: ${props => (props.isOn ? `green` : `red`)};
+  width: 20px;
+  height: 20px;
   display: block;
+  border-radius: 50%;
 `;
 
-
+export const Name = styled.p`
+  text-align: center;
+  font-size: 25px;
+  color: #4e17a7;
+`;
