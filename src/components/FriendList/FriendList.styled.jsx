@@ -12,6 +12,7 @@ export const Li = styled.li`
   flex-basis: auto;
   flex-basis: 125px;
   border: 3px solid rgba(0, 0, 0, 0.2);
+  background-color: #a1f1d5;
 `;
 
 export const Status = styled.span`
